@@ -5,6 +5,8 @@ import com.project.BMS.models.dto.Theatre;
 import com.project.BMS.repositories.OwnerRepository;
 import com.project.BMS.services.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -36,6 +38,9 @@ public class OwnerServiceImpl implements OwnerService {
     public List<String> listCities(String userName) {
         return null;
     }
+
+    @Query("select case when count(e)>0 then true else false end from User u where (u.userName) = (:userName)")
+    public boolean isUserNamePresent(@Param("userName") String userName){}
 
     @Override
     public String register(String userName) {

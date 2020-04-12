@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService{
+
+    boolean isUserNamePresent(String userName);
+
     String register(String userName);
 
     long getId(String userName);

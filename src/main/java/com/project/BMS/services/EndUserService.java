@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface EndUserService extends UserService{
+public interface EndUserService extends UserService {
 
     List<Movie> allMoviesForCity(String userName, String cityName);
 

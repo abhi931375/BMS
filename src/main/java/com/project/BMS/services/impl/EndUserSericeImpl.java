@@ -1,12 +1,19 @@
 package com.project.BMS.services.impl;
 
+import com.project.BMS.models.dto.EndUser;
 import com.project.BMS.models.dto.Movie;
 import com.project.BMS.models.dto.Theatre;
+import com.project.BMS.repositories.EndUserRepository;
 import com.project.BMS.services.EndUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class EndUserSericeImpl implements EndUserService {
+    private EndUser endUser;
+    @Autowired
+    private EndUserRepository endUserRepository;
+
     @Override
     public List<Movie> allMoviesForCity(String userName, String cityName) {
         return null;
@@ -23,13 +30,19 @@ public class EndUserSericeImpl implements EndUserService {
     }
 
     @Override
+    public boolean isUserNamePresent(String userName) {
+        return false;
+    }
+
+    @Override
     public String register(String userName) {
-        return null;
+        endUserRepository
+        EndUser t = endUserRepository.save(new EndUser(userName));
     }
 
     @Override
     public long getId(String userName) {
-        return 0;
+        return endUser.getId(userName);
     }
 
     @Override
