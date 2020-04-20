@@ -14,4 +14,6 @@ public interface EndUserService extends UserService {
     List<Theatre> allTheatresForMovie(String movieName);
 
     String bookTickets(String theatreName, int showNumber, int noOfTickets);
+
+    List<String> moviesForCity(String cityName);
 }

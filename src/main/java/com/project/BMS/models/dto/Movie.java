@@ -4,27 +4,27 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Movie implements Serializable {
-    private long id;
     private String name;
     private String theatreName;
     private List<Integer> showNumbers;
-    private boolean releaseStatus;
+//    private boolean releaseStatus;
 
     public Movie() {
     }
 
-    public Movie(String name, String theatreName){
+    public Movie(String name, String theatreName, List<Integer> showNumbers){
         this.name = name;
         this.theatreName = theatreName;
+        this.showNumbers = showNumbers;
     }
 
-    public boolean isReleaseStatus() {
-        return releaseStatus;
-    }
-
-    public void setReleaseStatus(boolean releaseStatus) {
-        this.releaseStatus = releaseStatus;
-    }
+//    public boolean isReleaseStatus() {
+//        return releaseStatus;
+//    }
+//
+//    public void setReleaseStatus(boolean releaseStatus) {
+//        this.releaseStatus = releaseStatus;
+//    }
 
     public String getTheatreName() {
         return theatreName;

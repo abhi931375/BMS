@@ -5,6 +5,13 @@ public class User {
     protected String userName; //Named it userName instead of name as it should be unique for owners who register
     protected boolean isOwner;
 
+    public User(){}
+
+    public User(String userName, boolean isOwner) {
+        this.userName = userName;
+        this.isOwner = isOwner;
+    }
+
     public String getUserName() {
         return userName;
     }

@@ -1,9 +1,11 @@
 package com.project.BMS.models;
 
+import com.project.BMS.models.dto.Seat;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "theatre")
+@Table(name = "theatres")
 public class Theatre {
 
     @Id
@@ -11,35 +13,12 @@ public class Theatre {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "theatre_name")
+    @Column(unique = true, nullable = false, name = "theatre_name")
     private String theatreName;
 
-    @Column(name = "city_name")
-    private String cityName;
+    @Column(name = "city_id")
+    private long cityId;
 
-    @Column(name = "total_seats")
-    private Seat totalSeats;
-
-    public Theatre(String theatreName, String cityName) {
-        this.theatreName = theatreName;
-        this.cityName = cityName;
-    }
-
-    public Seat getTotalSeats() { return totalSeats; }
-
-    public void setTotalSeats(Seat totalSeats) { this.totalSeats = totalSeats; }
-
-    public String getTheatreName() {
-        return theatreName;
-    }
-
-    public void setTheatreName(String theatreName) {
-        this.theatreName = theatreName;
-    }
-
-    public String getCityId() { return cityName;}
-
-    public void setCity(String cityName) {
-        this.cityName = cityName;
-    }
+    @Column(name = "owner_id")
+    private long ownerId;
 }
